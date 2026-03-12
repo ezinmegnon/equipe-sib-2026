@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Équipe SIB 2026–2028 | Votez pour nous</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #0D4A28;
+  --green:  #1B7A45;
+  --lime:   #4CAF7D;
+  --gold:   #C9922A;
+  --amber:  #F0C060;
+  --cream:  #F9F6EE;
+  --ink:    #0E1A14;
+  --mist:   #EAF2EC;
+  --steel:  #5A7066;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 0 60px;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--forest);
+  padding: 40px 28px 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,122,69,0.6), transparent 70%);
+}
+.header-flag {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  position: relative;
+}
+.header-label {
+  position: relative;
+  display: inline-block;
+  background: rgba(201,146,42,0.18);
+  border: 1px solid rgba(201,146,42,0.5);
+  color: var(--amber);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 40px;
+  margin-bottom: 16px;
+}
+.header h1 {
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.header h1 em {
+  color: var(--amber);
+  font-style: normal;
+  display: block;
+}
+.header-slogan {
+  position: relative;
+  font-size: .95rem;
+  color: rgba(255,255,255,.65);
+  font-style: italic;
+  margin-top: 8px;
+}
+
+/* ── APPEL URGENT ── */
+.urgent {
+  background: var(--gold);
+  color: #fff;
+  text-align: center;
+  padding: 16px 24px;
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .5px;
+}
+.urgent span { font-size: 1.1rem; }
+
+/* ── SECTION ── */
+.sec { padding: 32px 24px; }
+.sec + .sec { padding-top: 0; }
+
+.sec-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.rule {
+  width: 44px; height: 3px;
+  background: linear-gradient(to right, var(--green), var(--amber));
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+/* ── MESSAGE PERSO ── */
+.message-box {
+  background: #fff;
+  border-left: 4px solid var(--green);
+  border-radius: 4px;
+  padding: 22px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  font-size: .93rem;
+  line-height: 1.8;
+  color: #2a2a2a;
+}
+.message-box p + p { margin-top: 14px; }
+.message-box strong { color: var(--forest); }
+
+/* ── ÉQUIPE ── */
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+.member {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 8px rgba(0,0,0,.05);
+  transition: transform .15s;
+}
+.member:active { transform: scale(.98); }
+
+.m-ava {
+  min-width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .95rem;
+  color: #fff; flex-shrink: 0;
+  font-family: 'Cormorant Garamond', serif;
+}
+.av1 { background: var(--forest); }
+.av2 { background: #1B5E7A; }
+.av3 { background: var(--steel); }
+.av4 { background: #2A7D6B; }
+.av5 { background: var(--gold); }
+.av6 { background: #7D2A3A; }
+.av7 { background: #3A5E1A; }
+.av8 { background: #1A3A7D; }
+.av9 { background: var(--green); }
+.av10 { background: #8B6914; }
+
+.m-info { flex: 1; }
+.m-name {
+  font-weight: 700;
+  font-size: .93rem;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.m-role {
+  font-size: .76rem;
+  color: var(--steel);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 500;
+}
+.m-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--mist);
+  line-height: 1;
+}
+
+/* ── PROGRAMME ── */
+.axes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+.axe {
+  background: #fff;
+  border-radius: 6px;
+  padding: 18px 18px;
+  box-shadow: 0 1px 8px rgba(0,0,0,.05);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.axe-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+.axe h4 { font-size: .9rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.axe p  { font-size: .82rem; color: var(--steel); line-height: 1.6; }
+
+/* ── SOUTIEN ── */
+.soutien-box {
+  background: var(--forest);
+  border-radius: 8px;
+  padding: 28px 24px;
+  text-align: center;
+  color: #fff;
+}
+.soutien-box h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+.soutien-box p {
+  font-size: .88rem;
+  color: rgba(255,255,255,.7);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* ── BOUTONS CTA ── */
+.cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 15px 20px;
+  border-radius: 4px;
+  font-size: .93rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity .2s, transform .15s;
+}
+.btn:active { transform: scale(.97); opacity: .9; }
+
+.btn-wa {
+  background: #25D366;
+  color: #fff;
+}
+.btn-fb {
+  background: #1877F2;
+  color: #fff;
+}
+.btn-sms {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.3);
+}
+
+/* ── PARTAGE ── */
+.share-sec {
+  background: var(--mist);
+  border-radius: 8px;
+  padding: 22px 20px;
+  text-align: center;
+}
+.share-sec h4 {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 8px;
+}
+.share-sec p {
+  font-size: .82rem;
+  color: var(--steel);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.share-text {
+  background: #fff;
+  border: 1px solid #c8dece;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: .82rem;
+  line-height: 1.7;
+  color: var(--ink);
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 12px;
+}
+.btn-copy {
+  background: var(--forest);
+  color: #fff;
+  border: none;
+  padding: 11px 28px;
+  border-radius: 4px;
+  font-size: .85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-copy:hover { background: var(--green); }
+.btn-copy.copied { background: #25D366; }
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 28px 24px 0;
+  font-size: .78rem;
+  color: var(--steel);
+  border-top: 1px solid #dde8dd;
+  margin-top: 32px;
+}
+.footer strong { color: var(--forest); }
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: #e0ebe0;
+  margin: 8px 24px;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-flag">🇧🇯</div>
+  <span class="header-label">SIB · Bureau Exécutif 2026–2028</span>
+  <h1>Une Équipe Unie<em>pour l'Immunologie Béninoise</em></h1>
+  <p class="header-slogan">"Ensemble, Faisons Rayonner l'Immunologie"</p>
+</div>
+
+<!-- ═══ BANDEAU URGENT ═══ -->
+<div class="urgent">
+  <span>🗳️</span> Élections SIB 2026 — Découvrez notre programme et soutenez-nous !
+</div>
+
+<!-- ═══ MESSAGE PERSONNEL ═══ -->
+<div class="sec">
+  <p class="sec-label">Cher(e) membre de la SIB</p>
+  <h2 class="sec-title">Notre message pour vous</h2>
+  <div class="rule"></div>
+  <div class="message-box">
+    <p>Nous sommes <strong>10 candidats</strong>, réunis par une conviction commune : la Société d'Immunologie du Bénin mérite une <strong>communication forte, une formation accessible et un rayonnement international</strong>.</p>
+    <p>Nous avons préparé un programme concret en <strong>4 axes stratégiques</strong> pour faire avancer la SIB lors du mandat <strong>2026-2028</strong>.</p>
+    <p>Votre vote est précieux. Nous vous demandons humblement de nous accorder votre confiance pour bâtir ensemble une SIB forte, visible et unie. 🙏</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ ÉQUIPE ═══ -->
+<div class="sec">
+  <p class="sec-label">Notre liste complète</p>
+  <h2 class="sec-title">Les 10 Candidats</h2>
+  <div class="rule"></div>
+  <div class="team-list">
+
+    <div class="member">
+      <div class="m-ava av1">RA</div>
+      <div class="m-info">
+        <div class="m-name">Rafiou Adamou</div>
+        <div class="m-role">👑 Président</div>
+      </div>
+      <div class="m-num">01</div>
+    </div>
+
+    <div class="member">
+      <div class="m-ava av2">IS</div>
+      <div class="m-info">
+        <div class="m-name">IBITOKOU Samad</div>
+        <div class="m-role">🤝 Vice-Président</div>
+      </div>
+      <div class="m-num">02</div>
+    </div>
+
+    <div class="member">
+      <div class="m-ava av3">GL</div>
+      <div class="m-info">
+        <div class="m-name">Gatien LOKOSSOU</div>
+        <div class="m-role">📋 Secrétaire Général</div>
+      </div>
+      <div class="m-num">03</div>
+    </div>
+
+    <div class="member">
+      <div class="m-ava av4">RT</div>
+      <div class="m-info">
+        <div class="m-name">Romaric Tochoedo</div>
+        <div class="m-role">📋 Secrétaire Général Adjoint</div>
+      </div>
+      <div class="m-num">04</div>
+    </div>
+
+    <div class="member">
+      <div class="m-ava av5">AK</div>
+      <div class="m-info">
+        <div class="m-name">Adnette Koutinhouin</div>
+        <div class="m-role">💰 Trésorière Générale</div>
+      </div>
+      <div class="m-num">05</div>
+    </div>
+
+    <div class="member">
+      <div class="m-ava av6">PA</div>
+      <div class="m-info">
+        <div class="m-name">Prudencia Adéchina</div>
+        <div class="m-role">💰 Trésorière Générale Adjointe</div>
+      </div>
+      <div class="m-num">06</div>
+    </div>
+
+    <div class="member">
+      <div class="m-ava av7">PA</div>
+      <div class="m-info">
+        <div class="m-name">Privat Agniwo</div>
+        <div class="m-role">🎓 Secrétaire à la Formation</div>
+      </div>
+      <div class="m-num">07</div>
+    </div>
+
+    <div class="member">
+      <div class="m-ava av8">RT</div>
+      <div class="m-info">
+        <div class="m-name">Raymondo Tossou</div>
+        <div class="m-role">🎓 Secrétaire Adjoint à la Formation</div>
+      </div>
+      <div class="m-num">08</div>
+    </div>
+
+    <div class="member">
+      <div class="m-ava av9">SE</div>
+      <div class="m-info">
+        <div class="m-name">Sem Ezinmègnon</div>
+        <div class="m-role">📣 Secrétaire à la Communication</div>
+      </div>
+      <div class="m-num">09</div>
+    </div>
+
+    <div class="member">
+      <div class="m-ava av10">CB</div>
+      <div class="m-info">
+        <div class="m-name">Cédric Bignon</div>
+        <div class="m-role">📣 Secrétaire Adjoint à la Communication</div>
+      </div>
+      <div class="m-num">10</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ PROGRAMME ═══ -->
+<div class="sec">
+  <p class="sec-label">Ce que nous allons faire</p>
+  <h2 class="sec-title">Notre Programme en 4 Axes</h2>
+  <div class="rule"></div>
+  <div class="axes">
+    <div class="axe">
+      <div class="axe-icon">📬</div>
+      <div>
+        <h4>Communication Interne Renforcée</h4>
+        <p>Newsletter mensuelle, annuaire numérique des membres, groupe WhatsApp officiel, espace documentaire partagé, rapport annuel.</p>
+      </div>
+    </div>
+    <div class="axe">
+      <div class="axe-icon">💻</div>
+      <div>
+        <h4>Présence Numérique Professionnelle</h4>
+        <p>Site web bilingue FR/EN, pages LinkedIn & Facebook animées, charte graphique cohérente, templates officiels SIB.</p>
+      </div>
+    </div>
+    <div class="axe">
+      <div class="axe-icon">🏛️</div>
+      <div>
+        <h4>Visibilité Nationale</h4>
+        <p>Congrès annuel de la SIB, webinaires mensuels, partenariats avec l'UAC, l'UPIB, l'EPAC et le Ministère de la Santé.</p>
+      </div>
+    </div>
+    <div class="axe">
+      <div class="axe-icon">🌍</div>
+      <div>
+        <h4>Rayonnement International</h4>
+        <p>Affiliation à l'IUIS, partenariats SCI Canada & ASI, réseau des sociétés francophones d'Afrique de l'Ouest.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ APPEL AU VOTE ═══ -->
+<div class="sec">
+  <div class="soutien-box">
+    <h3>🗳️ Votez pour nous !</h3>
+    <p>Votre voix compte. Ensemble, nous pouvons bâtir une SIB forte, visible et reconnue — au Bénin et dans le monde entier.</p>
+    <div class="cta-group">
+      <a href="https://www.facebook.com/profile.php?id=votre_page" class="btn btn-fb" target="_blank">
+        👍 Suivre notre page Facebook
+      </a>
+      <a href="https://wa.me/?text=Je+soutiens+l%27%C3%89quipe+SIB+2026-2028+%F0%9F%87%A7%F0%9F%87%AF+%22Ensemble%2C+Faisons+Rayonner+l%27Immunologie%22+%F0%9F%94%AC" class="btn btn-wa" target="_blank">
+        📲 Partager sur WhatsApp
+      </a>
+      <a href="sms:?body=Je%20soutiens%20l'%C3%89quipe%20SIB%202026-2028%20%F0%9F%87%A7%F0%9F%87%AF%20%22Ensemble%2C%20Faisons%20Rayonner%20l'Immunologie%22" class="btn btn-sms">
+        💬 Partager par SMS
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MESSAGE À COPIER-COLLER ═══ -->
+<div class="sec" style="padding-top:0">
+  <div class="share-sec">
+    <h4>📋 Transférez ce message à vos collègues</h4>
+    <p>Copiez ce texte et envoyez-le par WhatsApp, SMS ou email à tous les membres de la SIB que vous connaissez.</p>
+    <div class="share-text" id="shareText">🇧🇯 ÉLECTIONS SIB 2026-2028
+
+Cher(e) membre de la SIB,
+
+Je vous contacte pour vous présenter l'équipe candidate au Bureau Exécutif de la Société d'Immunologie du Bénin pour le mandat 2026-2028.
+
+Notre liste :
+👑 Président : Rafiou Adamou
+🤝 VP : IBITOKOU Samad
+📋 SG : Gatien LOKOSSOU
+📋 SGA : Romaric Tochoedo
+💰 TG : Adnette Koutinhouin
+💰 TGA : Prudencia Adéchina
+🎓 Sec. Formation : Privat Agniwo
+🎓 Sec. Adj. Formation : Raymondo Tossou
+📣 Sec. Communication : Sem Ezinmègnon
+📣 Sec. Adj. Communication : Cédric Bignon
+
+Notre slogan : "Ensemble, Faisons Rayonner l'Immunologie" 🔬
+
+Votre vote est précieux. Soutenez notre équipe ! 🙏</div>
+    <button class="btn-copy" id="copyBtn" onclick="copyMessage()">📋 Copier le message</button>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <p><strong>Équipe SIB 2026–2028</strong> · Bureau Exécutif</p>
+  <p style="margin-top:6px;">Société d'Immunologie du Bénin 🇧🇯</p>
+  <p style="margin-top:4px; font-size:.72rem; opacity:.6;">"Ensemble, Faisons Rayonner l'Immunologie"</p>
+</div>
+
+<script>
+function copyMessage() {
+  const text = document.getElementById('shareText').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✅ Copié ! Envoyez-le maintenant';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '📋 Copier le message';
+      btn.classList.remove('copied');
+    }, 3000);
+  });
+}
+</script>
+
+</body>
+</html>
